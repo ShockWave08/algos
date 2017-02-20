@@ -41,8 +41,14 @@ int main()
        exit(1);//nothing to do but quit program
   }
 
-  bubbleSort(inputs);
+ bubbleSort(inputs);
    
+ 
+//  selectionSort(inputs);
+  
+//  insertionSort(inputs);
+
+
   for(unsigned int i = 0; i < inputs.size(); i++){
 	     cout << inputs[i] << endl;
    }	
@@ -59,33 +65,23 @@ void bubbleSort(auto & inputs){
 	}
 }
 
-/** void selectionSort(auto &Data){
-
-	for(int i = 0; i < Data.size(); i++){
+void selectionSort(auto & inputs){
+	for(unsigned int i = 0; i < inputs.size(); i++){
 		int min = i;
-		for(int j = i + 1; j < Data.size(); j++){
-			if(Data[j] < Data[min]
+		for(unsigned int j = i + 1;j < inputs.size(); j++){
+			if(inputs[j] < inputs[min])
 				min = j;
 		}
-		swap(Data[i], Data[min]);
+		swap(inputs[i], inputs[min]);
 	}
-	
-        for(int i = 0; i < Data.size(); i++){
-	     cout << Data[i] << endl;
-        }	
 }
 
-
-void insertionSort(auto &Data){
-	for(int i = 0; i < Data.size(); i++){
-		int j = i + 1;
-		while(j > 0 && Data[j - 1] > Data[j]){
-			swap(Data[j], Data[j-1]);
+void insertionSort(auto & inputs){
+	for(unsigned int i = 0; i < inputs.size(); i++){
+		unsigned int j = i + 1;
+		while(j > 0 && inputs[j-1] > inputs[j]){
+			swap(inputs[j], inputs[j-1]);
 			j = j -1;
 		}
 	}
-	
-        for(int i = 0; i < Data.size(); i++){
-	     cout << Data[i] << endl;
-        }	
-}**/
+}
